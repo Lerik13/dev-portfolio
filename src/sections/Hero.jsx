@@ -1,3 +1,7 @@
+import { AnimatedBorderButton } from '@/components/AnimatedBorderButton'
+import { Button } from '@/components/Button'
+import { ArrowRight, Download } from 'lucide-react'
+
 export const Hero = () => {
   return (
     <section className='relative min-h-screen flex overflow-hidden'>
@@ -26,6 +30,53 @@ export const Hero = () => {
             }}
           />
         ))}
+      </div>
+
+      {/* Content */}
+      <div className='container mx-auto px-6 pt-32 pb-20 relative z-10'>
+        <div className='grid lg:grid-cols-2 gap-12 items-center'>
+          {/* Left Column  - Text Content*/}
+          <div className='space-y-8'>
+            <div className='animate-fade-in'>
+              <span className='inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary'>
+                <span className='w-2 h-2 bg-primary rounded-full animate-pulse' />
+                Software Engineer • React Specialist
+              </span>
+            </div>
+
+            {/* Headline */}
+            <div className='space-y-4'>
+              <h1 className='text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100'>
+                Blending
+                <br />
+                <span className='text-primary glow-text'>design</span> thinking
+                <br />
+                with precise
+                <br />
+                <span className='font-serif italic font-normal text-white'>
+                  development.
+                </span>
+              </h1>
+              <p className='text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200'>
+                Hi, I’m Valeria Kan — a software engineer from Edmonton, Canada.
+                I build modern, scalable web applications with React, Next.js,
+                and TypeScript, focusing on performance and user experience.
+              </p>
+            </div>
+
+            {/* CTAs */}
+            <div className='flex flex-wrap gap-4 animate-fade-in animation-delay-300'>
+              <Button size='lg'>
+                Contact Me <ArrowRight className='w-5 h-5' />
+              </Button>
+              <AnimatedBorderButton>
+                <Download className='w-5 h-5' />
+                Download CV
+              </AnimatedBorderButton>
+            </div>
+          </div>
+          {/* Right Column - Profile Image */}
+        </div>
       </div>
     </section>
   )
