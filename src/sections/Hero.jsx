@@ -1,6 +1,6 @@
 import { AnimatedBorderButton } from '@/components/AnimatedBorderButton'
 import { Button } from '@/components/Button'
-import { ArrowRight, Download } from 'lucide-react'
+import { ArrowRight, Download, Github, Linkedin } from 'lucide-react'
 
 export const Hero = () => {
   return (
@@ -43,7 +43,6 @@ export const Hero = () => {
                 Software Engineer • React Specialist
               </span>
             </div>
-
             {/* Headline */}
             <div className='space-y-4'>
               <h1 className='text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100'>
@@ -63,7 +62,6 @@ export const Hero = () => {
                 and TypeScript, focusing on performance and user experience.
               </p>
             </div>
-
             {/* CTAs */}
             <div className='flex flex-wrap gap-4 animate-fade-in animation-delay-300'>
               <Button size='lg'>
@@ -73,6 +71,26 @@ export const Hero = () => {
                 <Download className='w-5 h-5' />
                 Download CV
               </AnimatedBorderButton>
+            </div>
+            {/* Social Links */}
+            {/* icon: Mail, href: 'mailto:Kan.Valeria1309@gmail.com' */},
+            <div className='flex items-center gap-4 animate-fade-in animation-delay-400'>
+              <span className='text-sm text-muted-foreground'>Follow me: </span>
+              {[
+                { icon: Github, href: 'https://github.com/Lerik13' },
+                {
+                  icon: Linkedin,
+                  href: 'https://www.linkedin.com/in/valeria-kan',
+                },
+              ].map((social, idx) => (
+                <a
+                  href={social.href}
+                  key={idx}
+                  className='p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300'
+                >
+                  {<social.icon className='w-5 h-5' />}
+                </a>
+              ))}
             </div>
           </div>
           {/* Right Column - Profile Image */}
