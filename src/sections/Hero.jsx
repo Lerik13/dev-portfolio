@@ -2,6 +2,34 @@ import { AnimatedBorderButton } from '@/components/AnimatedBorderButton'
 import { Button } from '@/components/Button'
 import { ArrowRight, Download, Github, Linkedin } from 'lucide-react'
 
+const skills = [
+  'JavaScript (ES6+)',
+  'TypeScript',
+  'React',
+  'Next.js',
+  'Astro',
+  'HTML5',
+  'CSS3',
+  'Tailwind CSS',
+  'Responsive Design',
+  'REST APIs',
+  'GraphQL',
+  'Node.js',
+  'Express.js',
+  'PHP',
+  'Git & GitHub',
+  'Docker',
+  'Webpack',
+  'Vite',
+  'UI/UX Design',
+  'Figma',
+  'Performance Optimization',
+  'Accessibility (a11y)',
+  'Cross-Browser Compatibility',
+  'Agile / Scrum',
+  'CI/CD',
+]
+
 export const Hero = () => {
   return (
     <section className='relative min-h-screen flex overflow-hidden'>
@@ -127,6 +155,24 @@ export const Hero = () => {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Skills Section */}
+        <div className='mt-20 animate-fade-in animation-delay-600'>
+          <p className='text-sm text-muted-foreground mb-6 text-center'>
+            Technologies I work with
+          </p>
+          <div className='relative overflow-hidden'>
+            <div className='flex animate-marquee'>
+              {[...skills, ...skills].map((skill, idx) => (
+                <div key={idx} className='flex-shrink-0 px-8 py-8'>
+                  <span className='text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors'>
+                    {skill}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
