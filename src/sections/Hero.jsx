@@ -142,7 +142,7 @@ export const Hero = () => {
                   alt='Valeria Kan'
                   className='w-full aspect-[4/5] object-cover rounded-2xl'
                 />
-                <div class='absolute inset-0 bg-black/40 rounded-3xl '></div>
+                <div className='absolute inset-0 bg-black/40 rounded-3xl '></div>
 
                 {/* Floating Badge */}
                 <div className='absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float'>
