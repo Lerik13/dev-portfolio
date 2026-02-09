@@ -1,4 +1,6 @@
+import { AnimatedBorderButton } from '@/components/AnimatedBorderButton'
 import { ArrowUpRight, Github } from 'lucide-react'
+import { useState } from 'react'
 
 const projects = [
   {
@@ -92,6 +94,11 @@ const projects = [
 ]
 
 export const Projects = () => {
+  // By default, show only 4 projects
+  const [showAll, setShowAll] = useState(false)
+
+  const displayedProjects = showAll ? projects : projects.slice(0, 4)
+
   return (
     <section id='projects' className='py-32 relative outline-hidden'>
       {/* Bg glows */}
@@ -99,12 +106,10 @@ export const Projects = () => {
       <div className='absolute bottom-1/4 left-0 w-64 h-64 bg-highlight/5 rounded-full blur-3xl' />
       <div className='container mx-auto px-6 relative z-10'>
         {/* Section Header */}
-
         <div className='text-center mx-auto mb-16 max-w-3xl'>
           <span className='text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in'>
             My Projects
           </span>
-
           <h2 className='text-4xl md:text-5xl font-bold leading-tight text-secondary-foreground animate-fade-in animation-delay-100'>
             Work that
             <span className='font-serif italic font-normal text-white'>
@@ -120,7 +125,7 @@ export const Projects = () => {
 
         {/* Projects Grid */}
         <div className='grid md:grid-cols-2 gap-8'>
-          {projects.map((project, idx) => (
+          {displayedProjects.map((project, idx) => (
             <div
               key={idx}
               className='group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1'
@@ -180,6 +185,14 @@ export const Projects = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* View All CTA */}
+        <div className='text-center mt-12 animate-fade-in animation-delay-500'>
+          <AnimatedBorderButton onClick={() => setShowAll(!showAll)}>
+            {showAll ? 'Show Less' : 'Show All'}
+            <ArrowUpRight className='w-5 h-5' />
+          </AnimatedBorderButton>
         </div>
       </div>
     </section>
