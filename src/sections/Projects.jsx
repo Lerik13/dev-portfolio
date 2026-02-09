@@ -129,7 +129,7 @@ export const Projects = () => {
             <div
               key={idx}
               className='group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1'
-              style={{ animationDelay: `${(idx + 1) * 100}ms` }}
+              style={{ animationDelay: `${(idx + 1) * 150}ms` }}
             >
               {/* Image */}
               <div className='relative overflow-hidden aspect-video'>

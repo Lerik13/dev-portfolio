@@ -2,6 +2,7 @@ import { Navbar } from '@/layout/Navbar'
 import { Hero } from '@/sections/Hero'
 import { About } from '@/sections/About'
 import { Projects } from '@/sections/Projects'
+import { Experience } from '@/sections/Experience'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Hero />
         <About />
         <Projects />
+        <Experience />
       </main>
     </div>
   )
