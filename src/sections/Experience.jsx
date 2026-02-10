@@ -1,7 +1,7 @@
 const experiences = [
   {
     period: 'Jan 2022 — Present',
-    role: 'Freelance Web Developer & UI/UX Designer',
+    role: 'Freelance Web Developer',
     company: 'Self-Employed',
     description:
       'Designing and developing custom, performance-focused web applications and e-commerce websites for small businesses. Delivered mobile-first, accessible solutions with a strong focus on UX/UI, branding consistency, and measurable business results.',
@@ -34,7 +34,7 @@ const experiences = [
   },
   {
     period: 'Jul 2016 — Jan 2022',
-    role: 'Web Developer / Event Planner / Performer',
+    role: 'Web Developer / Event Planner',
     company: 'Magic Art Studio',
     description:
       'Developed and maintained websites and digital tools for an entertainment and events business while managing branding, marketing, and client engagement. Combined technical development with creative and customer-focused problem solving.',
@@ -51,7 +51,7 @@ const experiences = [
       'Figma',
       'Photoshop',
     ],
-    current: true,
+    current: false,
   },
   {
     period: 'Jul 2009 — Jul 2016',
@@ -149,7 +149,11 @@ export const Experience = () => {
                 style={{ animationDelay: `${(idx + 1) * 150}ms` }}
               >
                 {/* Timeline dot */}
-                <div className='absolute'></div>
+                <div className='absolute left-0 md:left-1/2 top-0 w-3 h-3 bg-primary rounded-full -translate-x-1/2 ring-4 ring-background z-10'>
+                  {exp.current && (
+                    <span className='absolute inset-0 rounded-full bg-primary animate-ping opacity-75'></span>
+                  )}
+                </div>
 
                 {/* Content */}
                 <div
