@@ -37,6 +37,18 @@ const skills = [
 ]
 
 export const Hero = () => {
+  const handleContactMe = () => {
+    const section = document.getElementById('contact')
+    section?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  const handleDownloadCV = () => {
+    const link = document.createElement('a')
+    link.href = '/resume_Valeria_ Kan.pdf'
+    link.download = 'Valeria_Kan_Resume.pdf'
+    link.click()
+  }
+
   return (
     <section className='relative min-h-screen flex overflow-hidden'>
       {/* Bg */}
@@ -98,10 +110,10 @@ export const Hero = () => {
             </div>
             {/* CTAs */}
             <div className='flex flex-wrap gap-4 animate-fade-in animation-delay-300'>
-              <Button size='lg'>
+              <Button size='lg' onClick={handleContactMe}>
                 Contact Me <ArrowRight className='w-5 h-5' />
               </Button>
-              <AnimatedBorderButton>
+              <AnimatedBorderButton onClick={handleDownloadCV}>
                 <Download className='w-5 h-5' />
                 Download CV
               </AnimatedBorderButton>
