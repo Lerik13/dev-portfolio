@@ -23,6 +23,10 @@ export const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const handleContactMe = () => {
+    const section = document.getElementById('contact')
+    section?.scrollIntoView({ behavior: 'smooth' })
+  }
   return (
     <header
       className={`fixed top-0 left-0 right-0 transition-all duration-500 ${isScrolled ? 'glass-strong py-3' : 'bg-transparent py-5'} z-50`}
@@ -52,7 +56,9 @@ export const Navbar = () => {
 
         {/* CTA (call-to-action) Button */}
         <div className='hidden md:block'>
-          <Button size='sm'>Contact Me</Button>
+          <Button size='sm' onClick={handleContactMe}>
+            Contact Me
+          </Button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -79,7 +85,12 @@ export const Navbar = () => {
               </a>
             ))}
 
-            <Button onClick={() => setIsMobileMenuOpen(false)}>
+            <Button
+              onClick={() => {
+                handleContactMe()
+                setIsMobileMenuOpen(false)
+              }}
+            >
               Contact Me
             </Button>
           </div>
