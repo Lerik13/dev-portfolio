@@ -1,16 +1,90 @@
-# React + Vite
+# 🌐 Personal Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio website built with **React** and **Tailwind CSS**, showcasing my work, skills, and professional journey as a Web Developer.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tech Stack
 
-## React Compiler
+- **React** – Component-based UI development
+- **Tailwind CSS** – Utility-first styling
+- **Responsive Design** – Mobile-first approach
+- **JavaScript**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📌 Features & Sections
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1️⃣ Hero Section
+
+- Professional introduction as a **Web Developer**
+- Clear and concise value proposition
+- Call-to-action buttons:
+  - **Contact Me**
+  - **Download CV**
+- Highlighted core skills
+- Fully responsive layout
+
+---
+
+### 2️⃣ About Me
+
+- Detailed professional summary
+- Career highlights and key achievements
+- Focus areas:
+  - Frontend Development
+  - UI/UX Design
+  - Performance Optimization
+  - Clean & Maintainable Code
+  - Collaboration & Communication
+
+---
+
+### 3️⃣ My Projects
+
+- Featured portfolio projects
+- Each project includes:
+  - Project description
+  - Technologies used
+  - GitHub repository link
+  - Live demo link
+- **Show All Projects** button to explore more work
+
+### 4️⃣ Testimonials
+
+- Client feedback and reviews
+- Highlights of collaboration experience
+- Clean testimonial card layout
+
+---
+
+### 5️⃣ Contact Section
+
+- Functional contact form:
+  - Name
+  - Email
+  - Message
+- Direct contact information
+- Easy and accessible communication
+
+---
+
+### 6️⃣ Navigation
+
+- Responsive Header navigation
+- Smooth scrolling between sections
+- Footer with:
+  - Quick links
+  - Social media links
+  - Copyright information
+
+---
+
+## 📱 Responsive Design
+
+Built with a **mobile-first approach** to ensure:
+
+- Seamless experience on mobile, tablet, and desktop
+- Optimized layout and spacing
+- Fast loading performance
+- Accessibility best practices
