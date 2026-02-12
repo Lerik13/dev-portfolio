@@ -1,6 +1,6 @@
 import { AnimatedBorderButton } from '@/components/AnimatedBorderButton'
 import { ArrowUpRight, Github } from 'lucide-react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const projects = [
   {
@@ -99,6 +99,13 @@ export const Projects = () => {
 
   const displayedProjects = showAll ? projects : projects.slice(0, 4)
 
+  useEffect(() => {
+    if (!showAll) {
+      const btnShowAll = document.getElementById('btn-show-all-projects')
+      btnShowAll?.scrollIntoView({ behavior: 'smooth' })
+    }
+  }, [showAll])
+
   return (
     <section id='projects' className='py-32 relative outline-hidden'>
       {/* Bg glows */}
@@ -188,7 +195,10 @@ export const Projects = () => {
         </div>
 
         {/* View All CTA */}
-        <div className='text-center mt-12 animate-fade-in animation-delay-500'>
+        <div
+          id='btn-show-all-projects'
+          className='text-center mt-12 animate-fade-in animation-delay-500'
+        >
           <AnimatedBorderButton onClick={() => setShowAll(!showAll)}>
             {showAll ? 'Show Less' : 'Show All'}
             <ArrowUpRight className='w-5 h-5' />
