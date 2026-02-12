@@ -1,6 +1,6 @@
 import { AnimatedBorderButton } from '@/components/AnimatedBorderButton'
 import { ArrowUpRight, Github } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const projects = [
   {
@@ -97,13 +97,18 @@ export const Projects = () => {
   // By default, show only 4 projects
   const [showAll, setShowAll] = useState(false)
 
+  const prevShowAll = useRef(showAll)
+  const buttonRef = useRef(null)
+
   const displayedProjects = showAll ? projects : projects.slice(0, 4)
 
   useEffect(() => {
-    if (!showAll) {
-      const btnShowAll = document.getElementById('btn-show-all-projects')
-      btnShowAll?.scrollIntoView({ behavior: 'smooth' })
+    // Scroll only when clicking “Show Less”, avoid this behavior in first render
+    if (prevShowAll.current && !showAll) {
+      buttonRef.current?.scrollIntoView({ behavior: 'smooth' })
     }
+
+    prevShowAll.current = showAll
   }, [showAll])
 
   return (
@@ -195,11 +200,11 @@ export const Projects = () => {
         </div>
 
         {/* View All CTA */}
-        <div
-          id='btn-show-all-projects'
-          className='text-center mt-12 animate-fade-in animation-delay-500'
-        >
-          <AnimatedBorderButton onClick={() => setShowAll(!showAll)}>
+        <div className='text-center mt-12 animate-fade-in animation-delay-500'>
+          <AnimatedBorderButton
+            ref={buttonRef}
+            onClick={() => setShowAll(!showAll)}
+          >
             {showAll ? 'Show Less' : 'Show All'}
             <ArrowUpRight className='w-5 h-5' />
           </AnimatedBorderButton>
